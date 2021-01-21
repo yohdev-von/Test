@@ -27,6 +27,13 @@ services:
        WORDPRESS_DB_USER: wordpress
        WORDPRESS_DB_PASSWORD: eveneasier
        WORDPRESS_DB_NAME: wordpress
+       WORDPRESS_CONFIG_EXTRA: |
+                    define('WP_HOME', 'redis-test.yohdigital.net');
+                    define('WP_SITEURL', 'redis-test.yohdigital.net');
+                    define( 'WP_CACHE', 'true');
+                    define( 'WP_CACHE_KEY_SALT', 'redis-test.yohdigital.net');
+                    define( 'WP_REDIS_PASSWORD', 'redispassword');
+
 
    nginx:
       container_name: nginx
